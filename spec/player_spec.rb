@@ -16,11 +16,4 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'shoud reduce the hitpoints by 10' do
-      will.attack(joe)
-      expect(joe.hitpoints).to eq 90
-    end
-  end
-
 end
