@@ -24,5 +24,22 @@ describe Game do
     game.attack(game.player_2)
     expect(game.player_2.hitpoints).to eq 90
   end
+  it "initializes next_player to be player_2" do
+    game = Game.new("Joe", "Will", player_1_class, player_2_class)
+    expect(game.next_player.name).to eq "Will"
+  end
+
+  it "after 2 attacks player 1 should have 90 HP" do
+    game = Game.new("Joe", "Will", player_1_class, player_2_class)
+    allow(will).to receive(:hitpoints=).and_return(90)
+    allow(will).to receive(:hitpoints).and_return(90)
+    allow(joe).to receive(:hitpoints=).and_return(90)
+    allow(joe).to receive(:hitpoints).and_return(90)
+    game.attack(game.next_player)
+    game.attack(game.next_player)
+    expect(game.player_1.hitpoints).to eq 90
+  end
+
+
 
 end

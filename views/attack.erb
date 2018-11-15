@@ -5,10 +5,10 @@
 
 <body>
   <div>
-  <%= @player_1_name %> attacked <%= @player_2_name %>
+  <%= @attacker %> attacked <%= @being_attacked_name %>
   </div>
   <div>
-    <%= @player_2_name %>: <%= $game.player_2.hitpoints %>HP
+    <%= @being_attacked_name %>: <%= @being_attacked_hitpoints %>HP
   </div>
   <div class="">
     <form class="" action="/play">
